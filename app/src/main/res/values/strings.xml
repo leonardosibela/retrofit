@@ -1,3 +1,7 @@
 <resources>
+
     <string name="app_name">Retrofit</string>
+    <string name="user_name_hint">Type user name</string>
+    <string name="search_button_text">Search</string>
+
 </resources>

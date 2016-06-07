@@ -11,6 +11,7 @@ import com.sibela.examples.retrofit.adapter.StringAdapter;
 import com.sibela.examples.retrofit.model.User;
 import com.sibela.examples.retrofit.presenter.UserSearchPresenter;
 import com.sibela.examples.retrofit.task.UserSearch;
+import com.sibela.examples.retrofit.view.SimpleDividerItemDecoration;
 
 import java.util.List;
 
@@ -42,6 +43,7 @@ public class UserSearchActivity extends AppCompatActivity implements UserSearch.
 
     private void setRecyclerView() {
         userRecycler.setLayoutManager(new LinearLayoutManager(this));
+        userRecycler.addItemDecoration(new SimpleDividerItemDecoration(this));
         adapter = new StringAdapter(R.layout.string_item);
         userRecycler.setAdapter(adapter);
     }

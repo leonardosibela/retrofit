@@ -4,4 +4,6 @@
     <string name="user_name_hint">Type user name</string>
     <string name="search_button_text">Search</string>
 
+    <string name="error_searching_users">Error searching users</string>
+
 </resources>

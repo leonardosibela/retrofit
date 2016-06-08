@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".MainActivity">
+    tools:context=".UserSearchActivity">
 
     <EditText
         android:id="@+id/user_name_input"
@@ -16,7 +16,9 @@
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@id/search_button"
         android:layout_toStartOf="@id/search_button"
-        android:hint="@string/user_name_hint" />
+        android:hint="@string/user_name_hint"
+        android:imeOptions="actionDone"
+        android:singleLine="true" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/users_recycler"

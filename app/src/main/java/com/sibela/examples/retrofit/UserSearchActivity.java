@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -22,6 +23,7 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.OnEditorAction;
 
 public class UserSearchActivity extends AppCompatActivity implements UserSearch.View {
 
@@ -86,6 +88,15 @@ public class UserSearchActivity extends AppCompatActivity implements UserSearch.
         showProgress();
         String login = userNameInput.getText().toString();
         presenter.searchUsers(login);
+    }
+
+    @OnEditorAction(R.id.user_name_input)
+    public boolean userNameInputEditorAction(int actionId) {
+        if (actionId == EditorInfo.IME_ACTION_DONE) {
+            searchUsers();
+            return true;
+        }
+        return false;
     }
 
     public void hideKeyboard() {

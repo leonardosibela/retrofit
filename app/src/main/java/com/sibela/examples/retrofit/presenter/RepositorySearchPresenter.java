@@ -12,7 +12,11 @@ import retrofit2.Response;
 
 public class RepositorySearchPresenter implements RepositorySearch.Presenter {
 
-    RepositorySearch.View view;
+    private RepositorySearch.View view;
+
+    public RepositorySearchPresenter(RepositorySearch.View view) {
+        this.view = view;
+    }
 
     @Override
     public void searchRepositories(String login) {

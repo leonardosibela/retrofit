@@ -40,7 +40,7 @@ public class RepositorySearchActivity extends Activity implements RepositorySear
         ButterKnife.bind(this);
         setRecyclerView();
 
-        presenter = new RepositorySearchPresenter();
+        presenter = new RepositorySearchPresenter(this);
         presenter.searchRepositories(getIntent().getExtras().getString(USER_LOGIN));
     }
 

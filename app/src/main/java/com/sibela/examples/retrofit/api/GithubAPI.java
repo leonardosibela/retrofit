@@ -1,7 +1,7 @@
 package com.sibela.examples.retrofit.api;
 
 
-import com.sibela.examples.retrofit.model.Repo;
+import com.sibela.examples.retrofit.model.Repository;
 import com.sibela.examples.retrofit.model.UserSearchReturn;
 
 import java.util.List;
@@ -25,8 +25,8 @@ public class GithubAPI {
         @GET("/search/users")
         Call<UserSearchReturn> getUsers(@Query("q") String searchByLoginString);
 
-        @GET("users/{user}/repos")
-        Call<List<Repo>> getReposByUser(@Path("user") String username);
+        @GET("users/{login}/repos")
+        Call<List<Repository>> getRepositoriesByUser(@Path("user") String login);
 
     }
 

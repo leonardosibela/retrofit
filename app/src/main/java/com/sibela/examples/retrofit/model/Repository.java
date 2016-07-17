@@ -1,6 +1,6 @@
 package com.sibela.examples.retrofit.model;
 
-public class Repo {
+public class Repository {
 
     private long id;
     private String name;

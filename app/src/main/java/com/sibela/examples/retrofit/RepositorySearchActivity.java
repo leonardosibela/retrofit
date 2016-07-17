@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import com.sibela.examples.retrofit.adapter.RepositoryAdapter;
 import com.sibela.examples.retrofit.model.Repository;
+import com.sibela.examples.retrofit.presenter.RepositorySearchPresenter;
 import com.sibela.examples.retrofit.task.RepositorySearch;
 import com.sibela.examples.retrofit.view.SimpleDividerItemDecoration;
 
@@ -39,6 +40,7 @@ public class RepositorySearchActivity extends Activity implements RepositorySear
         ButterKnife.bind(this);
         setRecyclerView();
 
+        presenter = new RepositorySearchPresenter();
         presenter.searchRepositories(getIntent().getExtras().getString(USER_LOGIN));
     }
 

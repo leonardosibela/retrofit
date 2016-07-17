@@ -27,7 +27,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     @Override
     public void onBindViewHolder(UserViewHolder holder, int position) {
         User user = users.get(position);
-        holder.itemText.setText(user.getLogin());
+        holder.userLogin.setText(user.getLogin());
     }
 
     @Override
@@ -43,7 +43,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     public static class UserViewHolder extends RecyclerView.ViewHolder {
 
         @Bind(R.id.user_login)
-        TextView itemText;
+        TextView userLogin;
 
         public UserViewHolder(View itemView) {
             super(itemView);

@@ -1,6 +1,7 @@
 package com.sibela.examples.retrofit;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 import com.sibela.examples.retrofit.adapter.UserAdapter;
 import com.sibela.examples.retrofit.model.User;
 import com.sibela.examples.retrofit.presenter.UserSearchPresenter;
+import com.sibela.examples.retrofit.task.RepositorySearch;
 import com.sibela.examples.retrofit.task.UserSearch;
 import com.sibela.examples.retrofit.view.SimpleDividerItemDecoration;
 
@@ -52,7 +54,21 @@ public class UserSearchActivity extends AppCompatActivity implements UserSearch.
 
     private void setRecyclerView() {
 
-        adapter = new UserAdapter();
+        adapter = new UserAdapter(new UserAdapter.UserClickListner() {
+
+            @Override
+            public View.OnClickListener onClick(final User user) {
+                return new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(UserSearchActivity.this, RepositorySearchActivity.class);
+                        intent.putExtra(RepositorySearchActivity.USER_LOGIN, user.getLogin());
+                        startActivity(intent);
+                    }
+                };
+            }
+        });
 
         userRecycler.setLayoutManager(new LinearLayoutManager(this));
         userRecycler.addItemDecoration(new SimpleDividerItemDecoration(this));

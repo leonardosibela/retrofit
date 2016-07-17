@@ -31,12 +31,6 @@ public class RepositorySearchActivity extends Activity implements RepositorySear
     RepositoryAdapter adapter;
     RepositorySearch.Presenter presenter;
 
-    public RepositorySearchActivity getInstance(String login) {
-        RepositorySearchActivity activity = new RepositorySearchActivity();
-        activity.getIntent().putExtra(USER_LOGIN, login);
-        return activity;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -16,7 +16,12 @@ import butterknife.ButterKnife;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
 
-    List<User> users;
+    private List<User> users;
+    private UserClickListner listner;
+
+    public UserAdapter(UserClickListner listner) {
+        this.listner = listner;
+    }
 
     @Override
     public UserViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -28,6 +33,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
     public void onBindViewHolder(UserViewHolder holder, int position) {
         User user = users.get(position);
         holder.userLogin.setText(user.getLogin());
+        holder.itemView.setOnClickListener(listner.onClick(user));
     }
 
     @Override
@@ -51,7 +57,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         }
     }
 
-    public static interface UserClickListner {
+    public interface UserClickListner {
         public View.OnClickListener onClick(User user);
     }
 }

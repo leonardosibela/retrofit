@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.sibela.examples.retrofit.adapter.UserAdapter;
 import com.sibela.examples.retrofit.model.User;
 import com.sibela.examples.retrofit.presenter.UserSearchPresenter;
-import com.sibela.examples.retrofit.task.RepositorySearch;
 import com.sibela.examples.retrofit.task.UserSearch;
 import com.sibela.examples.retrofit.view.SimpleDividerItemDecoration;
 

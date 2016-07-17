@@ -26,7 +26,7 @@ public class GithubAPI {
         Call<UserSearchReturn> getUsers(@Query("q") String searchByLoginString);
 
         @GET("users/{login}/repos")
-        Call<List<Repository>> getRepositoriesByUser(@Path("user") String login);
+        Call<List<Repository>> getRepositoriesByUser(@Path("login") String login);
 
     }
 

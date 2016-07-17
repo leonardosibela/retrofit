@@ -1,13 +1,17 @@
 package com.sibela.examples.retrofit.api;
 
 
+import com.sibela.examples.retrofit.model.Repo;
 import com.sibela.examples.retrofit.model.UserSearchReturn;
+
+import java.util.List;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public class GithubAPI {
@@ -20,6 +24,9 @@ public class GithubAPI {
 
         @GET("/search/users")
         Call<UserSearchReturn> getUsers(@Query("q") String searchByLoginString);
+
+        @GET("users/{user}/repos")
+        Call<List<Repo>> getReposByUser(@Path("user") String username);
 
     }
 

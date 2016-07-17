@@ -12,7 +12,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.sibela.examples.retrofit.adapter.StringAdapter;
+import com.sibela.examples.retrofit.adapter.UserAdapter;
 import com.sibela.examples.retrofit.model.User;
 import com.sibela.examples.retrofit.presenter.UserSearchPresenter;
 import com.sibela.examples.retrofit.task.UserSearch;
@@ -37,7 +37,7 @@ public class UserSearchActivity extends AppCompatActivity implements UserSearch.
     ProgressBar progressBar;
 
     private UserSearch.Presenter presenter;
-    private StringAdapter adapter;
+    private UserAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,13 +53,13 @@ public class UserSearchActivity extends AppCompatActivity implements UserSearch.
     private void setRecyclerView() {
         userRecycler.setLayoutManager(new LinearLayoutManager(this));
         userRecycler.addItemDecoration(new SimpleDividerItemDecoration(this));
-        adapter = new StringAdapter(R.layout.string_item);
+        adapter = new UserAdapter();
         userRecycler.setAdapter(adapter);
     }
 
     @Override
     public void displayUsers(List<User> users) {
-        adapter.setItems(users);
+        adapter.setUsers(users);
         hideProgress();
     }
 

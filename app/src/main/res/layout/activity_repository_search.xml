@@ -9,6 +9,15 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.sibela.examples.retrofit.RepositorySearchActivity">
 
+    <ProgressBar
+        android:id="@+id/repo_search_progress"
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
     <RecyclerView
         android:id="@+id/repository_recycler"
         android:layout_width="match_parent"

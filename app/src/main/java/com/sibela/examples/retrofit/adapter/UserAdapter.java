@@ -50,4 +50,8 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
             ButterKnife.bind(this, itemView);
         }
     }
+
+    public static interface UserClickListner {
+        public View.OnClickListener onClick(User user);
+    }
 }

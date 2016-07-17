@@ -51,9 +51,11 @@ public class UserSearchActivity extends AppCompatActivity implements UserSearch.
     }
 
     private void setRecyclerView() {
+
+        adapter = new UserAdapter();
+
         userRecycler.setLayoutManager(new LinearLayoutManager(this));
         userRecycler.addItemDecoration(new SimpleDividerItemDecoration(this));
-        adapter = new UserAdapter();
         userRecycler.setAdapter(adapter);
     }
 

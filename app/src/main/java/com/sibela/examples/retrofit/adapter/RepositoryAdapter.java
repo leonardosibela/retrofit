@@ -32,7 +32,7 @@ public class RepositoryAdapter extends RecyclerView.Adapter<RepositoryAdapter.Re
 
     @Override
     public int getItemCount() {
-        return repositories.size();
+        return repositories == null ? 0 : repositories.size();
     }
 
     public void setRepositories(List<Repository> repositories) {

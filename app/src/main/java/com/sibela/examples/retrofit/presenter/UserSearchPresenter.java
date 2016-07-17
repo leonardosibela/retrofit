@@ -24,7 +24,7 @@ public class UserSearchPresenter implements UserSearch.Presenter {
     @Override
     public void searchUsers(String login) {
 
-        String userSearchByLogin = GithubAPI.Util.toUserSearchByLogin(login);
+        String userSearchByLogin = GithubAPI.Util.toSearchByLogin(login);
 
         Call<UserSearchReturn> usersCall = GithubAPI.getInstance().getUsers(userSearchByLogin);
         usersCall.enqueue(new Callback<UserSearchReturn>() {

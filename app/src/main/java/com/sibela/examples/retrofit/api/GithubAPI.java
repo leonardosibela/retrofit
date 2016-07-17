@@ -19,14 +19,13 @@ public class GithubAPI {
     public interface GithubService {
 
         @GET("/search/users")
-        Call<UserSearchReturn> getUsers(@Query("q") String searcByLoginString);
+        Call<UserSearchReturn> getUsers(@Query("q") String searchByLoginString);
 
     }
 
     public static GithubService getInstance() {
 
         if (githubService == null) {
-            OkHttpClient okHttpClient = new OkHttpClient();
 
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(ENDPOINT_URL)
@@ -42,7 +41,7 @@ public class GithubAPI {
 
     public static class Util {
 
-        public static String toUserSearchByLogin(String login) {
+        public static String toSearchByLogin(String login) {
             return login + " in:login";
         }
     }
